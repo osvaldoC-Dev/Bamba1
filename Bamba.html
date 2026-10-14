@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbershop BAMBA | Barbearia no Camama, Luanda</title>
+<meta name="description" content="Barbearia no Camama, Luanda. Cortes, barba e combos com preço claro. Marque a sua hora pelo WhatsApp em 30 segundos.">
+<meta name="theme-color" content="#0f1b2d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Trocar estas cores pelas cores reais da BAMBA */
+    --ink:#0f1b2d;        /* fundo principal */
+    --ink2:#16263d;       /* cartões */
+    --line:#2a3d58;
+    --pole-red:#d63a2f;   /* cor de destaque */
+    --pole-blue:#2c5fa8;
+    --paper:#eef0f3;      /* texto */
+    --muted:#9fb0c6;
+    --wa:#25d366;
+    --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+    --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  :focus-visible{outline:3px solid var(--paper);outline-offset:3px;border-radius:6px}
+
+  .demo{background:var(--paper);color:var(--ink);text-align:center;font-size:13px;font-weight:600;padding:7px 12px}
+
+  /* barra de topo */
+  .top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+  .brand{font-family:var(--display);font-weight:900;font-size:26px;letter-spacing:.04em;text-decoration:none;text-transform:uppercase}
+  .top a.mini{font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--line);padding:8px 14px;border-radius:999px}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 120px;gap:28px;align-items:stretch;padding:28px 0 56px}
+  .hero h1{font-family:var(--display);font-weight:900;font-size:clamp(54px,13vw,128px);line-height:.92;letter-spacing:-.005em;text-transform:uppercase}
+  .hero p.sub{margin-top:20px;font-size:19px;color:var(--muted);max-width:30em}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:12px;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;font-family:var(--body)}
+  .btn-wa{background:var(--wa);color:#06260f}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--paper)}
+  .btn:active{transform:translateY(1px)}
+  .proof{margin-top:22px;font-size:14px;color:var(--muted)}
+
+  .pole{min-height:280px;border-radius:60px;border:3px solid var(--paper);
+    background:repeating-linear-gradient(135deg,var(--pole-red) 0 22px,var(--paper) 22px 44px,var(--pole-blue) 44px 66px,var(--paper) 66px 88px);
+    background-size:124px 124px;animation:spin 6s linear infinite}
+  @keyframes spin{to{background-position:0 124px}}
+  @media (prefers-reduced-motion:reduce){.pole{animation:none}}
+
+  /* oferta */
+  .offer{background:var(--pole-red);color:#fff}
+  .offer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px}
+  .offer strong{font-family:var(--display);font-size:clamp(26px,5vw,38px);font-weight:900;text-transform:uppercase;line-height:1.05}
+  .offer span{font-size:16px}
+  .offer .btn{background:#fff;color:var(--ink)}
+
+  section{padding:64px 0}
+  h2{font-family:var(--display);font-weight:800;font-size:clamp(36px,7vw,58px);line-height:1;text-transform:uppercase;margin-bottom:8px}
+  .lead{color:var(--muted);margin-bottom:32px;max-width:34em}
+
+  /* preços */
+  .menu{list-style:none;max-width:680px}
+  .menu li{display:flex;align-items:baseline;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .menu .n{font-weight:700;font-size:18px}
+  .menu .d{color:var(--muted);font-size:14px;display:block;font-weight:400}
+  .menu .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-5px);min-width:16px}
+  .menu .p{font-family:var(--display);font-weight:800;font-size:28px;color:#fff;white-space:nowrap}
+  .menu .p small{font-size:16px;color:var(--muted);font-weight:700}
+
+  /* combos */
+  .combos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .combo{background:var(--ink2);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px}
+  .combo.best{border:2px solid var(--pole-red)}
+  .combo h3{font-family:var(--display);font-size:30px;font-weight:800;text-transform:uppercase;line-height:1}
+  .combo .flag{align-self:flex-start;background:var(--pole-red);font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px}
+  .combo p{color:var(--muted);font-size:15px;flex:1}
+  .combo .price{font-family:var(--display);font-weight:900;font-size:42px;line-height:1}
+  .combo .was{color:var(--muted);font-size:14px;text-decoration:line-through}
+  .combo .btn{width:100%;margin-top:6px;padding:13px 18px;font-size:16px}
+
+  /* como marcar */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;counter-reset:s;list-style:none}
+  .steps li{counter-increment:s;padding-top:14px;border-top:3px solid var(--paper)}
+  .steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:56px;line-height:1;color:var(--pole-red);display:block}
+  .steps b{display:block;font-size:19px;margin:6px 0 4px}
+  .steps span{color:var(--muted);font-size:15px}
+
+  /* fidelidade */
+  .loyal{background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:440px;margin:24px 0 18px}
+  .stamp{aspect-ratio:1;border-radius:50%;border:2px dashed var(--muted);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:20px;color:var(--muted)}
+  .stamp.on{background:var(--paper);border:2px solid var(--paper);color:var(--ink)}
+  .stamp.free{background:var(--pole-red);border:2px solid var(--pole-red);color:#fff;font-size:15px;text-transform:uppercase}
+
+  /* marcação */
+  .book{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  @media (max-width:760px){.book{grid-template-columns:1fr;gap:28px}.hero{grid-template-columns:1fr 70px}}
+  form{display:flex;flex-direction:column;gap:14px}
+  label{font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:6px;font-weight:500}
+  input,select{background:var(--ink2);border:1.5px solid var(--line);color:var(--paper);border-radius:12px;padding:14px;font-size:17px;font-family:var(--body);width:100%}
+  input:focus,select:focus{border-color:var(--paper)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .hint{font-size:13px;color:var(--muted)}
+
+  /* faq */
+  details{border-bottom:1px solid var(--line);padding:16px 0;max-width:720px}
+  summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--display);font-size:28px;line-height:1;color:var(--pole-red)}
+  details[open] summary::after{content:"\2212"}
+  details p{color:var(--muted);margin-top:10px}
+
+  /* local */
+  .where{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media (max-width:760px){.where{grid-template-columns:1fr}}
+  .where dt{color:var(--muted);font-size:14px;margin-top:14px}
+  .where dd{font-size:19px;font-weight:600}
+  .where a{color:#fff}
+
+  .final{background:var(--paper);color:var(--ink);text-align:left}
+  .final h2{color:var(--ink)}
+  .final p{margin-bottom:22px;color:#31445f}
+  .final .btn-ghost{border-color:var(--ink);color:var(--ink)}
+
+  footer{padding:28px 0;color:var(--muted);font-size:14px}
+
+  /* barra fixa */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(15,27,45,.96);backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+  .sticky .btn{width:100%;max-width:520px;margin:0 auto;display:flex}
+</style>
+</head>
+<body>
+
+<div class="demo">Versão de demonstração: preços, ofertas e contactos de exemplo</div>
+
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="#">Barbershop BAMBA</a>
+    <a class="mini" href="#marcar">Marcar hora</a>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1>Corte que se nota.</h1>
+      <p class="sub">Barbearia no Camama. Corte, degradê e barba com preço claro e hora marcada, sem ficar à espera.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" id="waHero" href="#">Marcar pelo WhatsApp</a>
+        <a class="btn btn-ghost" href="#precos">Ver preços</a>
+      </div>
+      <p class="proof" id="proof"></p>
+    </div>
+    <div class="pole" aria-hidden="true"></div>
+  </header>
+</div>
+
+<div class="offer">
+  <div class="wrap">
+    <div>
+      <strong id="offerTitle"></strong><br>
+      <span id="offerText"></span>
+    </div>
+    <a class="btn" id="waOffer" href="#">Quero esta oferta</a>
+  </div>
+</div>
+
+<main>
+  <section id="precos">
+    <div class="wrap">
+      <h2>Preços</h2>
+      <p class="lead">O preço que vê aqui é o preço que paga.</p>
+      <ul class="menu" id="menu"></ul>
+    </div>
+  </section>
+
+  <section style="background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <h2>Combos</h2>
+      <p class="lead">Mais cuidado, menos dinheiro. Escolha o combo e marque.</p>
+      <div class="combos" id="combos"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Como marcar</h2>
+      <p class="lead">Menos de um minuto, sem ligar para ninguém.</p>
+      <ol class="steps">
+        <li><b>Escolha o serviço</b><span>Corte, barba ou combo.</span></li>
+        <li><b>Diga o dia e a hora</b><span>O formulário abre o WhatsApp com tudo escrito.</span></li>
+        <li><b>Receba a confirmação</b><span>Respondemos no WhatsApp e a sua hora fica guardada.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="loyal">
+    <div class="wrap">
+      <h2>Cartão de cliente</h2>
+      <p class="lead" id="loyalText"></p>
+      <div class="stamps" id="stamps" aria-label="Cartão de fidelidade com 10 cortes"></div>
+      <a class="btn btn-wa" id="waLoyal" href="#">Quero o meu cartão</a>
+    </div>
+  </section>
+
+  <section id="marcar">
+    <div class="wrap book">
+      <div>
+        <h2>Marque a sua hora</h2>
+        <p class="lead">Preencha e toque em enviar. Abre o WhatsApp com o pedido pronto.</p>
+        <p class="hint">Responde dentro do horário de funcionamento.</p>
+      </div>
+      <form id="bookForm">
+        <label>O seu nome
+          <input id="nome" required autocomplete="given-name" placeholder="Ex.: Carlos">
+        </label>
+        <label>Serviço
+          <select id="servico"></select>
+        </label>
+        <div class="row">
+          <label>Dia
+            <input id="dia" type="date" required>
+          </label>
+          <label>Hora
+            <input id="hora" type="time" required>
+          </label>
+        </div>
+        <button class="btn btn-wa" type="submit">Enviar pedido por WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <section style="background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <h2>Perguntas frequentes</h2>
+      <p class="lead">O que os clientes novos mais perguntam.</p>
+      <div id="faq"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap where">
+      <div>
+        <h2>Onde estamos</h2>
+        <dl>
+          <dt>Morada</dt><dd id="local"></dd>
+          <dt>Horário</dt><dd id="horario"></dd>
+          <dt>WhatsApp</dt><dd><a id="telLink" href="#"></a></dd>
+          <dt>Instagram</dt><dd><a id="igLink" target="_blank" rel="noopener"></a></dd>
+        </dl>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;justify-content:center">
+        <a class="btn btn-ghost" id="mapLink" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        <a class="btn btn-ghost" id="reviewLink" target="_blank" rel="noopener">Ver avaliações no Google</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>A sua próxima hora está a um toque.</h2>
+      <p>Traga um amigo e peça o combo para dois.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" id="waFinal" href="#">Marcar pelo WhatsApp</a>
+        <a class="btn btn-ghost" href="#precos">Ver preços</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Barbershop BAMBA, Camama, Luanda</div>
+</footer>
+
+<div class="sticky"><a class="btn btn-wa" id="waSticky" href="#">Marcar pelo WhatsApp</a></div>
+
+<script>
+/* ============ EDITAR AQUI: dados do negócio ============ */
+const CONFIG = {
+  nome: "Barbershop BAMBA",
+  whatsapp: "244930466720",                 // número com 244, sem + nem espaços
+  telefoneVisivel: "+244 930 466 720",
+  instagram: "https://www.instagram.com/barbershopbamba/",  // colar o link real do Instagram
+  instagramTexto: "@barbershopbamba",
+  local: "Camama, Luanda (adicionar rua e ponto de referência)",
+  horario: "Segunda a sábado, 08:00 às 20:00",
+  maps: "https://www.google.com/maps/search/?api=1&query=Barbershop+BAMBA+Camama+Luanda",
+  avaliacoes: "https://www.google.com/maps/search/?api=1&query=Barbershop+BAMBA+Camama+Luanda",
+  prova: "Hora marcada, sem filas. Atendimento de segunda a sábado.",
+  oferta: { titulo: "Primeira visita: 20% de desconto", texto: "Diga que viu o site quando marcar. Válido no primeiro corte." },
+  fidelidade: "A cada 10 cortes, o próximo é por nossa conta. Peça o cartão na sua próxima visita.",
+  servicos: [                               // PREÇOS DE EXEMPLO: trocar pelos reais
+    { nome: "Corte normal",   desc: "Máquina e tesoura",       preco: 2000 },
+    { nome: "Degradê (fade)", desc: "Acabamento com navalha",  preco: 2500 },
+    { nome: "Barba",          desc: "Contorno e acabamento",   preco: 1500 },
+    { nome: "Corte infantil", desc: "Até 12 anos",             preco: 1500 },
+    { nome: "Sobrancelha",    desc: "Design masculino",        preco: 500  }
+  ],
+  combos: [
+    { nome: "Corte + Barba",     desc: "O mais pedido. Corte à escolha e barba alinhada.", preco: 3000, antes: 3500, destaque: true },
+    { nome: "Combo para dois",   desc: "Venha com um amigo e cada um paga menos.",         preco: 5000, antes: 5500 },
+    { nome: "Pai e filho",       desc: "Corte normal e corte infantil na mesma hora.",     preco: 3000, antes: 3500 }
+  ],
+  faq: [
+    ["Preciso de marcar hora?", "Não é obrigatório, mas quem marca pelo WhatsApp não espera. Escolha o dia e a hora no formulário."],
+    ["Como pago?", "Adicionar aqui os métodos aceites (dinheiro, transferência, Multicaixa Express)."],
+    ["Quanto demora um corte?", "Em média 30 a 45 minutos, dependendo do estilo e se inclui barba."],
+    ["Fazem corte infantil?", "Sim, até aos 12 anos, com preço próprio."],
+    ["Posso levar uma foto do corte que quero?", "Sim. Mostre a foto ao barbeiro ou envie no WhatsApp antes da visita."]
+  ]
+};
+/* ======================================================== */
+
+const kz = n => n.toLocaleString("pt-PT") + " Kz";
+const wa = t => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
+const $ = id => document.getElementById(id);
+const hello = `Olá ${CONFIG.nome}! Gostaria de marcar uma hora.`;
+
+["waHero","waFinal","waSticky"].forEach(id => $(id).href = wa(hello));
+$("waOffer").href = wa(`Olá! Vi o site e quero a oferta: ${CONFIG.oferta.titulo}.`);
+$("waLoyal").href = wa("Olá! Quero o cartão de cliente.");
+
+$("proof").textContent = CONFIG.prova;
+$("offerTitle").textContent = CONFIG.oferta.titulo;
+$("offerText").textContent = CONFIG.oferta.texto;
+$("loyalText").textContent = CONFIG.fidelidade;
+
+$("menu").innerHTML = CONFIG.servicos.map(s =>
+  `<li><div><span class="n">${s.nome}</span><span class="d">${s.desc}</span></div><span class="dots"></span><span class="p">${s.preco.toLocaleString("pt-PT")} <small>Kz</small></span></li>`
+).join("");
+
+$("combos").innerHTML = CONFIG.combos.map((c,i) =>
+  `<div class="combo${c.destaque?" best":""}">
+     ${c.destaque?'<span class="flag">Mais pedido</span>':""}
+     <h3>${c.nome}</h3><p>${c.desc}</p>
+     <div><div class="was">${kz(c.antes)}</div><div class="price">${kz(c.preco)}</div></div>
+     <a class="btn btn-wa" href="${wa(`Olá! Quero o combo "${c.nome}" (${kz(c.preco)}). Que horas têm disponíveis?`)}">Quero este combo</a>
+   </div>`
+).join("");
+
+$("servico").innerHTML =
+  CONFIG.combos.map(c => `<option value="${c.nome}">${c.nome} (${kz(c.preco)})</option>`).join("") +
+  CONFIG.servicos.map(s => `<option value="${s.nome}">${s.nome} (${kz(s.preco)})</option>`).join("");
+
+$("stamps").innerHTML = Array.from({length:10},(_,i) =>
+  i===9 ? `<div class="stamp free">Grátis</div>` : `<div class="stamp${i<3?" on":""}">${i+1}</div>`
+).join("");
+
+$("faq").innerHTML = CONFIG.faq.map(([q,a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join("");
+
+$("local").textContent = CONFIG.local;
+$("horario").textContent = CONFIG.horario;
+$("telLink").textContent = CONFIG.telefoneVisivel; $("telLink").href = wa(hello);
+$("igLink").textContent = CONFIG.instagramTexto; $("igLink").href = CONFIG.instagram;
+$("mapLink").href = CONFIG.maps;
+$("reviewLink").href = CONFIG.avaliacoes;
+
+const dia = $("dia");
+dia.min = new Date().toISOString().split("T")[0];
+
+$("bookForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const d = dia.value.split("-").reverse().join("/");
+  const msg = `Olá ${CONFIG.nome}! Quero marcar:\n` +
+    `Nome: ${$("nome").value}\nServiço: ${$("servico").value}\nDia: ${d}\nHora: ${$("hora").value}`;
+  window.open(wa(msg), "_blank");
+});
+</script>
+</body>
+</html>
